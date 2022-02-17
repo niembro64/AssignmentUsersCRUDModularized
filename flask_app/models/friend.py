@@ -13,8 +13,8 @@ class Friend:
 
     @classmethod
     def all_friends(cls):
-        query = "SELECT * FROM friends;"
-        results = connectToMySQL("fullstack_schema").query_db(query)
+        query = "SELECT * FROM users;"
+        results = connectToMySQL("users_crud").query_db(query)
         all_peeps = []
         for friend in results:
             all_peeps.append( cls(friend) )
@@ -22,12 +22,12 @@ class Friend:
 
     @classmethod
     def one_friend(cls, data):
-        query = "SELECT * FROM friends WHERE id = %(id)s;"
-        results = connectToMySQL("fullstack_schema").query_db(query, data)
+        query = "SELECT * FROM users WHERE id = %(id)s;"
+        results = connectToMySQL("users_crud").query_db(query, data)
         return cls(results[0])
 
     @classmethod
     def save_friend(cls, data):
-        query = "INSERT INTO friends (first_name, last_name, occupation, created_at, updated_at) VALUES (%(first_name)s, %(last_name)s, %(occupation)s, NOW(), NOW());"
-        new_id = connectToMySQL("fullstack_schema").query_db(query, data)
+        query = "INSERT INTO users (first_name, last_name, occupation, created_at, updated_at) VALUES (%(first_name)s, %(last_name)s, %(occupation)s, NOW(), NOW());"
+        new_id = connectToMySQL("users_crud").query_db(query, data)
         return new_id
