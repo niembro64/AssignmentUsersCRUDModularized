@@ -7,13 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>All Friend Info:</h2>
-    <a href="/new_friend">Add Friend!</a>
-    {% for one_friend in all_friends %}
+    <h2>Users' Info:</h2>
+    <a href="/new_user">Add User</a>
+    {% for one_user in all_users %}
 
-        <p><a href="/{{ one_friend.id }}">{{ one_friend.first_name }}</a></p>
-        <p>{{ one_friend.last_name }}</p>
-        <p>{{ one_friend.email }}</p>
+        <p><a href="/{{ one_user.id }}">{{ one_user.first_name }}</a></p>
+        <p>{{ one_user.last_name }}</p>
+        <p>{{ one_user.email }}</p>
         <p>======================================</p>
 
     {% endfor %}
