@@ -36,7 +36,7 @@ def create_friend():
     data = {
         "first_name" : request.form["fname"],
         "last_name" : request.form["lname"],
-        "occupation" : request.form["occ"]
+        "email" : request.form["em"]
     }
     friend_id = Friend.save_friend(data)
     return redirect(f"/{friend_id}")
