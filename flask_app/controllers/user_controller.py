@@ -57,10 +57,10 @@ def fun_delete_user(user_num):
     User.delete_user(data)
     return redirect("/users")
 
-@app.route("/users/<int:user_num>/e", methods=["POST"])
+@app.route("/users/<int:user_num>/editing", methods=["POST"])
 def fun_edit_user(user_num):
     data = {
-        "id": 14,
+        "id": user_num,
         "first_name": request.form["fname"],
         "last_name": request.form["lname"],
         "email": request.form["em"]
