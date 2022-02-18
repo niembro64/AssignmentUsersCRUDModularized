@@ -11,15 +11,15 @@
     <h2>Users' Info:</h2>
     <a href="/new_user">Add User</a>
     {% for one_user in all_users %}
-
-        <p><a href="/users/{{ one_user.id }}">{{ one_user.first_name }} {{ one_user.last_name }}</a></p>
+    <p>======================================</p>
+        <p>{{ one_user.first_name }} {{ one_user.last_name }}</a></p>
         <p>{{ one_user.email }}</p>
         <form action="/users/{{one_user.id}}/delete" method="POST">
             <input type="submit" value="Delete">
         </form>
-        <p>======================================</p>
-
+        <form action="/users/{{one_user.id}}">
+            <input type="submit" value="View">
+        </form>
     {% endfor %}
-
 </body>
 </html>
