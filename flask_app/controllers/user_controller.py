@@ -40,7 +40,7 @@ def edit_user(user_id):
 ###############################
 
 @app.route("/create_user", methods=["POST"])
-def create_user():
+def fun_create_user():
     data = {
         "first_name": request.form["fname"],
         "last_name": request.form["lname"],
@@ -50,10 +50,21 @@ def create_user():
     return redirect(f"/users/{user_id}")
 
 @app.route("/users/<int:user_num>/delete", methods=["POST"])
-def delete_user(user_num):
+def fun_delete_user(user_num):
     data = {
         "id" : user_num
         }
     User.delete_user(data)
     return redirect("/users")
 
+@app.route("/users/<int:user_num>/e", methods=["POST"])
+def fun_edit_user(user_num):
+    data = {
+        "id": 14,
+        "first_name": request.form["fname"],
+        "last_name": request.form["lname"],
+        "email": request.form["em"]
+    }
+    User.update_user(data)
+    return redirect(f"/users/{user_num}")
+    # return redirect("/users")
