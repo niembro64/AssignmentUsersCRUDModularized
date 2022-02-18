@@ -31,3 +31,9 @@ class User:
         query = "INSERT INTO users (first_name, last_name, email, created_at, updated_at) VALUES (%(first_name)s, %(last_name)s, %(email)s, NOW(), NOW());"
         new_id = connectToMySQL("users_crud").query_db(query, data)
         return new_id
+    
+    @classmethod
+    def delete_user(cls, data):
+        query = "DELETE FROM users WHERE id = %(id)s"
+        new_id = connectToMySQL("users_crud").query_db(query, data)
+        return

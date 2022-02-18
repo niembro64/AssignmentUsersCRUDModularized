@@ -4,19 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
     <title>Document</title>
 </head>
 <body>
-    <h2>Users' Info:</h2>
-    <a href="/new_user">Add User</a>
-    {% for one_user in all_users %}
 
-        <p><a href="/{{ one_user.id }}">{{ one_user.first_name }}</a></p>
-        <p>{{ one_user.last_name }}</p>
-        <p>{{ one_user.email }}</p>
-        <p>======================================</p>
-
-    {% endfor %}
+    <a href="/users">View Users</a>
 
 </body>
 </html>
