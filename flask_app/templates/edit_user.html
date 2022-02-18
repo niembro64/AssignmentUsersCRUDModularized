@@ -10,8 +10,7 @@
 <body>
     <h1>Edit User</h1>
 
-    <form action="/edit_user" method="POST">
-
+    <form action="/edit_user/{{one_user.id}}" method="POST">
 
         <label for="fname">First Name:</label>
         <input type="text" name="fname" value="{{one_user.first_name}}">
@@ -20,7 +19,10 @@
         <label for="em" >Email:</label>
         <input type="text" name="em" value="{{one_user.email}}">
 
-
+        <input type="submit" value="Update">
+    </form>
+    <form action="/users/{{one_user.id}}">
+        <input type="submit" value="View">
     </form>
 </body>
 </html>
