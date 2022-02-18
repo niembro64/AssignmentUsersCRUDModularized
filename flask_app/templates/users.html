@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Users' Info:</h2>
+    <h2>All Users</h2>
     <a href="/new_user">Add User</a>
     {% for one_user in all_users %}
     <p>======================================</p>
@@ -19,6 +19,9 @@
         </form>
         <form action="/users/{{one_user.id}}">
             <input type="submit" value="View">
+        </form>
+        <form action="/users/{{one_user.id}}/edit">
+            <input type="submit" value="Edit">
         </form>
     {% endfor %}
 </body>
