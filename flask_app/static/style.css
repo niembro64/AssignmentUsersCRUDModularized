@@ -2,4 +2,14 @@
     font-family: sans-serif;
     background-color: black;
     color: white;
+
+
+}
+
+input[type="button"], input[type="submit"] {
+    padding: 3px;
+    margin: 3px;
+    color: black;
+    background-color: white;
+    border-radius: 6px;
 }
